@@ -22,7 +22,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write ./src/**/*.{ts,tsx}",
-    "commitmsg": "commitlint -e $GIT_PARAMS"
+    "commit": "yarn commitlint --edit $GIT_PARAMS"
   },
   "eslintConfig": {
     "extends": [
