@@ -1,9 +1,12 @@
 export type PrefectureDetail = {
-  label: string;
+  predCode: number;
   data: {
-    year: number;
-    value: number;
-    rate?: number;
+    label: string;
+    data: {
+      year: number;
+      value: number;
+      rate?: number;
+    }[];
   }[];
 };
 
@@ -12,6 +15,13 @@ export type PrefectureDetailResponse = {
   message: null;
   result: {
     boundaryYear: number;
-    data: PrefectureDetail[];
+    data: {
+      label: string;
+      data: {
+        year: number;
+        value: number;
+        rate?: number;
+      }[];
+    }[];
   };
 };

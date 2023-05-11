@@ -6,10 +6,9 @@ import HighchartsReact from 'highcharts-react-official';
 highchartsAccessibility(Highcharts);
 
 import Header from './Header';
-import { prefecturesState } from '../globalStates/atoms/prefectureDetailAtom';
 import { useQueryPrefectures } from '../hooks/useQueryPrefectures';
 import './Top.css';
-import { useRecoilState } from 'recoil';
+// todo: recoilの削除
 import { useQueryPrefectureDetail } from '../hooks/useQueryPrefectureDetail';
 
 const Top = () => {
@@ -19,21 +18,19 @@ const Top = () => {
 
   // useQuery
   const { data, isLoading, error } = useQueryPrefectures();
-
-  // recoil
-  const [prefectures, setPrefectures] = useRecoilState(prefecturesState);
+  const { datas: testData } = useQueryPrefectureDetail(checkedList);
+  console.log(testData);
 
   // checkedList.map((item) => {
-  //   if (prefectures[item]) {
-  //     return;
-  //   }
+  //   const { data: testData } = useQueryPrefectureDetail(item);
+  // });
   //   const { data } = useQueryPrefectureDetail(item);
-    // setPrefectures((prev) => {
-    //   if (!data) {
-    //     return prev;
-    //   }
-    //   return [...prev, data];
-    // });
+  // setPrefectures((prev) => {
+  //   if (!data) {
+  //     return prev;
+  //   }
+  //   return [...prev, data];
+  // });
   // });
   // todo: apiからのレスポンスに置き換える
   const DATA = useMemo(
@@ -660,6 +657,7 @@ const Top = () => {
   ) => {
     const { checked, value } = e.target;
     const numericValue = Number(value);
+
     if (checked) {
       setCheckedList((prevCheckedList) => [...prevCheckedList, numericValue]);
     } else {
