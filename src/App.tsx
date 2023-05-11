@@ -821,7 +821,7 @@ function App() {
           }),
         };
 
-  const onToggleCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { checked, value } = e.target;
     const numericValue = Number(value);
     if (checked) {
@@ -842,7 +842,7 @@ function App() {
               type="checkbox"
               className="prefecture_list_item_checkbox"
               value={prefCode}
-              onChange={onToggleCheck}
+              onChange={handleCheckboxChange}
             />
             {prefName}
           </label>
@@ -851,7 +851,7 @@ function App() {
     [PREFECTURES]
   );
 
-  const onTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedType(e.target.value);
   };
 
@@ -865,7 +865,7 @@ function App() {
       {options && (
         <section>
           <div className="select_type_wrapper">
-            <select className="select_type" onChange={onTypeChange}>
+            <select className="select_type" onChange={handleSelectChange}>
               <option>総人口</option>
               <option>年少人口</option>
               <option>生産年齢人口</option>
