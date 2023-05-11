@@ -6,7 +6,10 @@ import {
   PrefectureDetailResponse,
 } from '../types/PrefectureDetail';
 
-export const useQueryPrefectureDetail = (indexes: number[]) => {
+export const useQueryPrefectureDetail = (
+  indexes: number[],
+  setYears: React.Dispatch<React.SetStateAction<number[]>>
+) => {
   const getPrefetureDetail = async (prefCode: number) => {
     // const { data } = await axios.get<PrefectureDetailResponse>(
     //   `${process.env.REACT_APP_API_URL}/population/composition/perYear?cityCode=-&prefCode=${prefCode}`,
@@ -15,6 +18,15 @@ export const useQueryPrefectureDetail = (indexes: number[]) => {
     //   }
     // );
     // const { result } = data;
+    setYears((prevYears) => {
+      if (prevYears.length > 0) {
+        return prevYears;
+      }
+      return [
+        1980, 1985, 1990, 1995, 2000, 2005, 2010, 2015, 2020, 2025, 2030, 2035,
+        2040, 2045,
+      ];
+    });
     // return result.data;
     return {
       prefCode: prefCode,
@@ -319,9 +331,7 @@ export const useQueryPrefectureDetail = (indexes: number[]) => {
     }),
   });
   const datas = results.map((result) => {
-    return {
-      result: result.data,
-    };
+    return result.data ?? [];
   });
   const isLoading = results.some((result) => result.isLoading);
   return { datas, isLoading };

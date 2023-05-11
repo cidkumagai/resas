@@ -15,23 +15,11 @@ const Top = () => {
   // states
   const [selectedType, setSelectedType] = useState('総人口');
   const [checkedList, setCheckedList] = useState<number[]>([]);
-
+  const [years, setYears] = useState<number[]>([]);
   // useQuery
   const { data, isLoading, error } = useQueryPrefectures();
-  const { datas: testData } = useQueryPrefectureDetail(checkedList);
+  const { datas: testData } = useQueryPrefectureDetail(checkedList, setYears);
   console.log(testData);
-
-  // checkedList.map((item) => {
-  //   const { data: testData } = useQueryPrefectureDetail(item);
-  // });
-  //   const { data } = useQueryPrefectureDetail(item);
-  // setPrefectures((prev) => {
-  //   if (!data) {
-  //     return prev;
-  //   }
-  //   return [...prev, data];
-  // });
-  // });
   // todo: apiからのレスポンスに置き換える
   const DATA = useMemo(
     () => [
@@ -618,7 +606,7 @@ const Top = () => {
       data,
     };
   });
-  const years = useMemo(() => DATA[0].data.map(({ year }) => year), []);
+  // const years = useMemo(() => DATA[0].data.map(({ year }) => year), []);
 
   // todo: 別ファイルでの定義の方がいいかも？
   const options =
