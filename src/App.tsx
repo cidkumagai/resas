@@ -9,14 +9,6 @@ import Header from './components/Header';
 
 import './App.css';
 
-type DetailData = {
-  label: string;
-  data: {
-    year: number;
-    value: number;
-    rate?: number;
-  }[];
-}[];
 function App() {
   const PREFECTURES = useMemo(
     () => [
@@ -792,6 +784,12 @@ function App() {
     []
   );
   const filteredData = DATA.filter((d) => d.label === '総人口');
+  const filteredData2 = filteredData.map(({ data }) => {
+    return {
+      name: '都道府県',
+      data,
+    };
+  });
   const years = useMemo(() => DATA[0].data.map(({ year }) => year), []);
 
   const options =
@@ -812,9 +810,9 @@ function App() {
               text: '人口数',
             },
           },
-          series: filteredData.map(({ data }) => {
+          series: filteredData2.map(({ name, data }) => {
             return {
-              name: 'line',
+              name,
               data: data.flatMap(({ value }) => value),
             };
           }),
@@ -847,7 +845,7 @@ function App() {
           </label>
         </li>
       )),
-    []
+    [PREFECTURES]
   );
 
   const onTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -857,28 +855,26 @@ function App() {
   return (
     <>
       <Header />
-      <section className="prefecture">
+      <section>
         <h1 className="prefecture_title">都道府県</h1>
         <ul className="prefecture_list">{prefectures}</ul>
       </section>
       {options && (
-        <>
-          <section className="select">
+        <section>
+          <div className="select_type_wrapper">
             <select className="select_type" onChange={onTypeChange}>
               <option>総人口</option>
               <option>年少人口</option>
               <option>生産年齢人口</option>
               <option>老年人口</option>
             </select>
-          </section>
-          <section className="chart">
-            <HighchartsReact
-              highcharts={Highcharts}
-              options={options}
-              immutable={true}
-            />
-          </section>
-        </>
+          </div>
+          <HighchartsReact
+            highcharts={Highcharts}
+            options={options}
+            immutable={true}
+          />
+        </section>
       )}
     </>
   );

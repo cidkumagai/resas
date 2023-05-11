@@ -1,6 +1,6 @@
 section {
   margin: 0 auto;
-  width: 80%;
+  width: 90%;
   @media screen and (max-width: 425px) {
     width: 95%;
   }
@@ -51,7 +51,7 @@ section {
   cursor: pointer;
 }
 
-.select {
+.select_type_wrapper {
   display: flex;
   justify-content: end;
 }
