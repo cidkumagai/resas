@@ -206,6 +206,7 @@ function App() {
 
   const [selectedType, setSelectedType] = useState('総人口');
   const [checkedList, setCheckedList] = useState<number[]>([]);
+  // todo: apiからのレスポンスに置き換える
   const DATA = useMemo(
     () => [
       {
@@ -783,6 +784,7 @@ function App() {
     ],
     []
   );
+  // todo: 機能が密集しているので責務を分割する
   const filteredData = DATA.filter((d) => d.label === '総人口');
   const filteredData2 = filteredData.map(({ data }) => {
     return {
@@ -792,6 +794,7 @@ function App() {
   });
   const years = useMemo(() => DATA[0].data.map(({ year }) => year), []);
 
+  // todo: 別ファイルでの定義の方がいいかも？
   const options =
     checkedList.length === 0
       ? undefined
