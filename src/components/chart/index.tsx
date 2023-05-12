@@ -32,17 +32,18 @@ const Chart = () => {
   const selectedType = useRecoilValue(selectedTypeSelector);
 
   const { data } = usePrefecturesQuery();
-  const { datas, isLoading } = usePrefectureDetailQuery(checkedList, setYears);
+  const { dataList, isLoading } = usePrefectureDetailQuery(checkedList, setYears);
 
   useEffect(() => {
     if (!data || isLoading) return;
-    setFormattedData(createChartData(datas, data, selectedType));
-  }, [data, isLoading, selectedType]);
+    const formattedData = createChartData(dataList, data, selectedType);
+    setFormattedData(formattedData);
+  }, [setFormattedData, data, isLoading, selectedType, checkedList]);
 
   useEffect(() => {
     if (!formattedData) return;
     setOptions(createOption(selectedType, years, formattedData));
-  }, [formattedData]);
+  }, [setOptions, formattedData]);
 
   const PopulationTypeSelectBox = useMemo(
     () => (

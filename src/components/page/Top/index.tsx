@@ -1,4 +1,4 @@
-import Chart from '../../chart';
+import Chart from '../../Chart';
 import CheckBox from '../../common/CheckBox';
 import Header from '../../common/Header';
 import { usePrefecturesQuery } from '../../../hooks/usePrefecturesQuery';

@@ -2,6 +2,8 @@ import { useSetRecoilState } from 'recoil';
 
 import { checkedListState } from '../../../globalStates/atoms/checkedListState';
 
+import './CheckBox.css';
+
 type Props = {
   prefCode: number;
   prefName: string;

@@ -2,6 +2,8 @@ import { useSetRecoilState } from 'recoil';
 
 import { selectedTypeState } from '../../../globalStates/atoms/selectedTypeAtom';
 
+import './SelectBox.css';
+
 type Props = {
   info: string;
   children: React.ReactNode;

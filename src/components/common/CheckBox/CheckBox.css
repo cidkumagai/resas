@@ -1,0 +1,11 @@
+.prefecture_list_item_label {
+  font-size: 18px;
+  @media screen and (max-width: 425px) {
+    font-size: 10px;
+  }
+}
+
+.prefecture_list_item_label:hover,
+.prefecture_list_item_checkbox:hover {
+  cursor: pointer;
+}

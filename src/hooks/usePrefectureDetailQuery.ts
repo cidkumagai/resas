@@ -40,11 +40,11 @@ export const usePrefectureDetailQuery = (
     }),
   });
 
-  const datas: PrefectureDetail[] = results.map((result) => {
+  const dataList: PrefectureDetail[] = results.map((result) => {
     return (result.data as PrefectureDetail) ?? [];
   });
 
   const isLoading = results.some((result) => result.isLoading);
 
-  return { datas, isLoading };
+  return { dataList, isLoading };
 };

@@ -5,13 +5,3 @@ section {
     width: 95%;
   }
 }
-
-.select_type_wrapper {
-  display: flex;
-  justify-content: end;
-}
-
-.select_type {
-  border-radius: 5px;
-  text-align: center;
-}
