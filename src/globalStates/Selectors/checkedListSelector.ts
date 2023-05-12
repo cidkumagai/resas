@@ -1,4 +1,5 @@
 import { selector } from 'recoil';
+
 import { checkedListState } from '../atoms/checkedListState';
 
 export const checkedListSelector = selector({

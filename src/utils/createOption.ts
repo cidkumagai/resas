@@ -1,4 +1,4 @@
-import { ChartDatas } from './../types/ChartDatas.d';
+import { ChartDatas } from './../types/ChartDatas';
 import { ChartOptions } from '../types/ChartOptions';
 
 export function createOption(
