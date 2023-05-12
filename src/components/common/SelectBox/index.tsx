@@ -1,6 +1,6 @@
 import { useSetRecoilState } from 'recoil';
 
-import { selectedTypeState } from '../../../globalStates/atoms/selectedTypeAtom';
+import { selectedTypeState } from '../../../globalStates/atoms/selectedTypeState';
 
 import './SelectBox.css';
 

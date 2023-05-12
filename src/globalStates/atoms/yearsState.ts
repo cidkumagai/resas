@@ -1,10 +1,12 @@
 import { atom } from 'recoil';
 
+import { atomKeys } from '../recoilKeys';
+
 type YearsState = number[];
 
 const initialState: YearsState = [];
 
 export const yearsState = atom({
-  key: 'yearsState',
+  key: atomKeys.yearsState,
   default: initialState,
 });

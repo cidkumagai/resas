@@ -1,9 +1,10 @@
 import { selector } from 'recoil';
 
 import { yearsState } from '../atoms/yearsState';
+import { selectorKeys } from '../recoilKeys';
 
 export const yearsSelector = selector({
-  key: 'yearsSelector',
+  key: selectorKeys.yearsSelector,
   get: ({ get }) => {
     const years = get(yearsState);
     return years;

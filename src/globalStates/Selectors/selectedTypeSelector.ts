@@ -1,9 +1,10 @@
 import { selector } from 'recoil';
 
-import { selectedTypeState } from '../atoms/selectedTypeAtom';
+import { selectedTypeState } from '../atoms/selectedTypeState';
+import { selectorKeys } from '../recoilKeys';
 
 export const selectedTypeSelector = selector({
-  key: 'selectedTypeSelector',
+  key: selectorKeys.selectedTypeSelector,
   get: ({ get }) => {
     const selectedType = get(selectedTypeState);
 
