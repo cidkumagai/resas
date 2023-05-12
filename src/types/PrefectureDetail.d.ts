@@ -1,5 +1,6 @@
+// 都道府県詳細の型定義
 export type PrefectureDetail = {
-  predCode: number;
+  prefCode: number;
   data: {
     label: string;
     data: {

@@ -1,16 +1,15 @@
-import React, { useMemo, useState } from 'react';
+import { RecoilRoot } from 'recoil';
 
-import Highcharts from 'highcharts';
-import highchartsAccessibility from 'highcharts/modules/accessibility';
-import HighchartsReact from 'highcharts-react-official';
-highchartsAccessibility(Highcharts);
+import Top from './components/page/Top';
 
 import './App.css';
 
-import Top from './components/Top';
-
 function App() {
-  return <Top />;
+  return (
+    <RecoilRoot>
+      <Top />
+    </RecoilRoot>
+  );
 }
 
 export default App;
