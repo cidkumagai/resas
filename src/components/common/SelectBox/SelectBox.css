@@ -1,0 +1,9 @@
+.select_type_wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.select_type {
+  border-radius: 5px;
+  text-align: center;
+}
