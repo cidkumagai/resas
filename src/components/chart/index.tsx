@@ -14,17 +14,13 @@ import { selectedTypeSelector } from '../../globalStates/Selectors/selectedTypeS
 import { usePrefectureDetailQuery } from '../../hooks/usePrefectureDetailQuery';
 import { usePrefecturesQuery } from '../../hooks/usePrefecturesQuery';
 import { ChartOptions } from '../../types/ChartOptions';
+import { FormattedData } from '../../types/FormattedData';
 import { createChartData } from '../../utils/createChartData';
 import { createOption } from '../../utils/createOption';
 
 const Chart = () => {
   const [options, setOptions] = useState<ChartOptions | undefined>(undefined);
-  const [formattedData, setFormattedData] = useState<
-    {
-      name: string;
-      data: number[];
-    }[]
-  >([]);
+  const [formattedData, setFormattedData] = useState<FormattedData>([]);
 
   const [years, setYears] = useRecoilState(yearsState);
 
