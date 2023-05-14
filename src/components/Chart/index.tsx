@@ -4,7 +4,11 @@ import { useRecoilValue } from 'recoil';
 import Highcharts from 'highcharts';
 import highchartsAccessibility from 'highcharts/modules/accessibility';
 import HighchartsReact from 'highcharts-react-official';
-highchartsAccessibility(Highcharts);
+
+if (typeof Highcharts === 'object') {
+  highchartsAccessibility(Highcharts);
+}
+
 
 import SelectBox from '../common/SelectBox';
 import Option from '../common/Option';
