@@ -8,7 +8,6 @@ import {
   PrefectureDetailResponse,
 } from '../types/PrefectureDetail';
 import { yearsState } from '../globalStates/atoms/yearsState';
-
 import { QUERY_KEYS } from '../constants/queryKeys';
 
 export const usePrefectureDetailQuery = (indexes: number[]) => {

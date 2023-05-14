@@ -1,4 +1,4 @@
-export type ChartDatas = {
+export type ChartData = {
   name: string;
   data: number[];
 };

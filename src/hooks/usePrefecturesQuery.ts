@@ -5,7 +5,6 @@ import {
   PrefectureItem,
   PrefectureListResponse,
 } from '../types/PrefectureList';
-
 import { QUERY_KEYS } from '../constants/queryKeys';
 
 export const usePrefecturesQuery = () => {
