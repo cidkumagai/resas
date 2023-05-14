@@ -18,7 +18,7 @@ const SelectBox = ({ info, children }: Props) => {
 
   return (
     <label className="select_type_wrapper">
-      {info}
+      {`${info} :`}
       <select className="select_type" onChange={handleSelectChange}>
         {children}
       </select>
