@@ -1,9 +1,18 @@
 .select_type_wrapper {
   display: flex;
   justify-content: flex-end;
+  margin-bottom: 10px;
+  @media screen and (max-width: 425px) {
+    font-size: 12px;
+  }
 }
 
 .select_type {
   border-radius: 5px;
   text-align: center;
+  margin-left: 10px;
+  padding: 0px 5px;
+  @media screen and (max-width: 425px) {
+    font-size: 12px;
+  }
 }

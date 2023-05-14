@@ -1,6 +1,7 @@
 import Chart from '../../Chart';
 import CheckBox from '../../common/CheckBox';
 import Header from '../../common/Header';
+import Loading from '../../common/Loading';
 import { usePrefecturesQuery } from '../../../hooks/usePrefecturesQuery';
 
 import './Top.css';
@@ -10,7 +11,7 @@ const Top = () => {
   const { data: prefectures, isLoading } = usePrefecturesQuery();
 
   if (isLoading) {
-    return <div>loading...</div>;
+    return <Loading />;
   }
 
   return (

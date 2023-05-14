@@ -29,6 +29,7 @@ const CheckBox = ({ prefCode, prefName }: Props) => {
     <label className="prefecture_list_item_label">
       <input
         type="checkbox"
+        id={`prefecture_${prefCode}`}
         className="prefecture_list_item_checkbox"
         value={prefCode}
         onChange={(e) => handleCheckboxChange(e)}

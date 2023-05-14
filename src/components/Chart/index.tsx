@@ -8,9 +8,9 @@ highchartsAccessibility(Highcharts);
 
 import SelectBox from '../common/SelectBox';
 import Option from '../common/Option';
-import { yearsState } from '../../globalStates/atoms/yearsState';
 import { checkedListSelector } from '../../globalStates/Selectors/checkedListSelector';
 import { selectedTypeSelector } from '../../globalStates/Selectors/selectedTypeSelector';
+import { yearsSelector } from '../../globalStates/Selectors/yearsSelector';
 import { usePrefectureDetailQuery } from '../../hooks/usePrefectureDetailQuery';
 import { usePrefecturesQuery } from '../../hooks/usePrefecturesQuery';
 import { ChartOptions } from '../../types/ChartOptions';
@@ -22,19 +22,19 @@ const Chart = () => {
   const [options, setOptions] = useState<ChartOptions | undefined>(undefined);
   const [formattedData, setFormattedData] = useState<FormattedData>([]);
 
-  const [years, setYears] = useRecoilState(yearsState);
+  const years = useRecoilValue(yearsSelector);
 
   const checkedList = useRecoilValue(checkedListSelector);
   const selectedType = useRecoilValue(selectedTypeSelector);
 
   const { data } = usePrefecturesQuery();
-  const { dataList, isLoading } = usePrefectureDetailQuery(checkedList, setYears);
+  const { dataList, isLoading } = usePrefectureDetailQuery(checkedList);
 
   useEffect(() => {
     if (!data || isLoading) return;
     const formattedData = createChartData(dataList, data, selectedType);
     setFormattedData(formattedData);
-  }, [setFormattedData, data, isLoading, selectedType, checkedList]);
+  }, [setFormattedData, isLoading, selectedType, checkedList]);
 
   useEffect(() => {
     if (!formattedData) return;
