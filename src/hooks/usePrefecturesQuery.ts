@@ -6,6 +6,8 @@ import {
   PrefectureListResponse,
 } from '../types/PrefectureList';
 
+import { QUERY_KEYS } from '../constants/queryKeys';
+
 export const usePrefecturesQuery = () => {
   const getPrefetures = async () => {
     const { data } = await axios.get<PrefectureListResponse>(
@@ -19,7 +21,7 @@ export const usePrefecturesQuery = () => {
   };
 
   return useQuery<PrefectureItem[], Error>({
-    queryKey: ['prefectures'],
+    queryKey: [QUERY_KEYS.PREFECTURES],
     queryFn: getPrefetures,
     staleTime: Infinity,
   });

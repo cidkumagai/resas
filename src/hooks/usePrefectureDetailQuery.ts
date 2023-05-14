@@ -9,6 +9,8 @@ import {
 } from '../types/PrefectureDetail';
 import { yearsState } from '../globalStates/atoms/yearsState';
 
+import { QUERY_KEYS } from '../constants/queryKeys';
+
 export const usePrefectureDetailQuery = (indexes: number[]) => {
   const setYears = useSetRecoilState(yearsState);
   const getPrefetureDetail = async (
@@ -34,7 +36,7 @@ export const usePrefectureDetailQuery = (indexes: number[]) => {
   const results = useQueries<UseQueryResult<PrefectureDetail[], Error>[]>({
     queries: indexes.map((index) => {
       return {
-        queryKey: ['prefectureDetail', index],
+        queryKey: [ QUERY_KEYS.PREFECTURE_DETAIL, index],
         queryFn: () => getPrefetureDetail(index),
         staleTime: Infinity,
       };

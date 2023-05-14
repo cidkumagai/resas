@@ -1,10 +1,10 @@
 import { selector } from 'recoil';
 
 import { checkedListState } from '../atoms/checkedListState';
-import { selectorKeys } from '../recoilKeys';
+import { SELECTOR_KEYS } from '../../constants/recoilKeys';
 
 export const checkedListSelector = selector({
-  key: selectorKeys.checkedListSelector,
+  key: SELECTOR_KEYS.CHECKED_LIST_SELECTOR,
   get: ({ get }) => {
     const checkedList = get(checkedListState);
     return checkedList;
