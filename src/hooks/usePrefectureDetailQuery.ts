@@ -1,15 +1,16 @@
+import { useSetRecoilState } from 'recoil';
 import { useQueries, UseQueryResult } from '@tanstack/react-query';
+
 import axios from 'axios';
 
 import {
   PrefectureDetail,
   PrefectureDetailResponse,
 } from '../types/PrefectureDetail';
+import { yearsState } from '../globalStates/atoms/yearsState';
 
-export const usePrefectureDetailQuery = (
-  indexes: number[],
-  setYears: React.Dispatch<React.SetStateAction<number[]>>
-) => {
+export const usePrefectureDetailQuery = (indexes: number[]) => {
+  const setYears = useSetRecoilState(yearsState);
   const getPrefetureDetail = async (
     prefCode: number
   ): Promise<PrefectureDetail> => {

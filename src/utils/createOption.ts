@@ -23,7 +23,10 @@ export function createOption(
             title: {
               text: '人口数',
             },
-          },
+        },
+        legend: {
+          align: 'center',
+        },
           series: chartDatas,
         };
 
