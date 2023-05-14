@@ -6,6 +6,8 @@ import {
   PrefectureDetailResponse,
 } from '../types/PrefectureDetail';
 
+import { QUERY_KEYS } from '../constants/queryKeys';
+
 export const usePrefectureDetailQuery = (
   indexes: number[],
   setYears: React.Dispatch<React.SetStateAction<number[]>>
@@ -33,7 +35,7 @@ export const usePrefectureDetailQuery = (
   const results = useQueries<UseQueryResult<PrefectureDetail[], Error>[]>({
     queries: indexes.map((index) => {
       return {
-        queryKey: ['prefectureDetail', index],
+        queryKey: [ QUERY_KEYS.PREFECTURE_DETAIL, index],
         queryFn: () => getPrefetureDetail(index),
         staleTime: Infinity,
       };
