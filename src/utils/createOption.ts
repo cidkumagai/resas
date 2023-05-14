@@ -1,10 +1,10 @@
-import { ChartDatas } from './../types/ChartDatas';
+import { ChartData } from '../types/ChartData';
 import { ChartOptions } from '../types/ChartOptions';
 
 export function createOption(
   selectedType: string,
   years: number[],
-  chartDatas: ChartDatas[]
+  chartDatas: ChartData[]
 ): ChartOptions {
   const options =
     chartDatas.length === 0
@@ -23,10 +23,10 @@ export function createOption(
             title: {
               text: '人口数',
             },
-        },
-        legend: {
-          align: 'center',
-        },
+          },
+          legend: {
+            align: 'center',
+          },
           series: chartDatas,
         };
 

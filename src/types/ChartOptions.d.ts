@@ -1,3 +1,4 @@
+// Highchartsのオプションの型定義
 export type ChartOptions =
   | {
       title: {
@@ -14,6 +15,6 @@ export type ChartOptions =
           text: string;
         };
       };
-      series: ChartDatas[];
+      series: ChartData[];
     }
   | undefined;

@@ -7,7 +7,6 @@ import { usePrefecturesQuery } from '../../../hooks/usePrefecturesQuery';
 import './Top.css';
 
 const Top = () => {
-  // useQuery
   const { data: prefectures, isLoading } = usePrefecturesQuery();
 
   if (isLoading) {
