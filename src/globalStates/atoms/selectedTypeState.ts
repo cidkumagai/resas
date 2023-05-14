@@ -1,12 +1,12 @@
 import { atom } from 'recoil';
 
-import { atomKeys } from '../recoilKeys';
+import { ATOM_KEYS} from '../../constants/recoilKeys';
 
 type SelectedTypeState = string;
 
 const initialState: SelectedTypeState = '総人口';
 
 export const selectedTypeState = atom({
-  key: atomKeys.selectedTypeState,
+  key: ATOM_KEYS.SELECTED_TYPE_STATE,
   default: initialState,
 });
