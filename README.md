@@ -21,5 +21,4 @@ $ yarn start
 ## 環境変数
 | 変数名 | 説明 |
 |:-----------|:------------|
-| REACT_APP_API_URL | RESAS_APIのURL |
 | REACT_APP_API_KEY | APIのキー |
