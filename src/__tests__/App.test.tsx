@@ -1,4 +1,5 @@
 import { render, renderHook, waitFor, screen } from '@testing-library/react';
+import { HelmetProvider } from 'react-helmet-async';
 import { RecoilRoot } from 'recoil';
 
 import { createQueryWrapper } from './mocks/createQueryWrapper';
@@ -24,7 +25,11 @@ describe('component rendering test', () => {
   });
 
   test('Header component test', () => {
-    render(<Header title="都道府県別人口推移" />);
+    render(
+      <HelmetProvider>
+        <Header title="都道府県別人口推移" />
+      </HelmetProvider>
+    );
     expect(screen.getByText('都道府県別人口推移')).toBeInTheDocument();
   });
 
