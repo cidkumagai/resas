@@ -8,6 +8,7 @@ import {
   PrefectureDetailResponse,
 } from '../types/PrefectureDetail';
 import { yearsState } from '../globalStates/atoms/yearsState';
+import { API_URL } from '../constants/apiUrl';
 import { QUERY_KEYS } from '../constants/queryKeys';
 
 export const usePrefectureDetailQuery = (indexes: number[]) => {
@@ -16,7 +17,7 @@ export const usePrefectureDetailQuery = (indexes: number[]) => {
     prefCode: number
   ): Promise<PrefectureDetail> => {
     const { data } = await axios.get<PrefectureDetailResponse>(
-      `${process.env.REACT_APP_API_URL}/population/composition/perYear?cityCode=-&prefCode=${prefCode}`,
+      `${API_URL}/population/composition/perYear?cityCode=-&prefCode=${prefCode}`,
       {
         headers: { 'X-API-KEY': process.env.REACT_APP_API_KEY },
       }
@@ -35,7 +36,7 @@ export const usePrefectureDetailQuery = (indexes: number[]) => {
   const results = useQueries<UseQueryResult<PrefectureDetail[], Error>[]>({
     queries: indexes.map((index) => {
       return {
-        queryKey: [ QUERY_KEYS.PREFECTURE_DETAIL, index],
+        queryKey: [QUERY_KEYS.PREFECTURE_DETAIL, index],
         queryFn: () => getPrefetureDetail(index),
         staleTime: Infinity,
       };

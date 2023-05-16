@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { QUERY_KEYS } from '../../constants/queryKeys';
 import { RecoilRoot } from 'recoil';
 
 export const createQueryWrapper = () => {
@@ -20,11 +20,13 @@ export const createQueryWrapper = () => {
 
   const queryWrapper = ({ children }: { children: ReactElement }) => {
     return (
-      <RecoilRoot>
-        <QueryClientProvider client={queryClient}>
-          {children}
-        </QueryClientProvider>
-      </RecoilRoot>
+      <HelmetProvider>
+        <RecoilRoot>
+          <QueryClientProvider client={queryClient}>
+            {children}
+          </QueryClientProvider>
+        </RecoilRoot>
+      </HelmetProvider>
     );
   };
   return { queryClient, queryWrapper };

@@ -5,12 +5,13 @@ import {
   PrefectureItem,
   PrefectureListResponse,
 } from '../types/PrefectureList';
+import { API_URL } from '../constants/apiUrl';
 import { QUERY_KEYS } from '../constants/queryKeys';
 
 export const usePrefecturesQuery = () => {
   const getPrefetures = async () => {
     const { data } = await axios.get<PrefectureListResponse>(
-      `${process.env.REACT_APP_API_URL}/prefectures`,
+      `${API_URL}/prefectures`,
       {
         headers: { 'X-API-KEY': process.env.REACT_APP_API_KEY },
       }
