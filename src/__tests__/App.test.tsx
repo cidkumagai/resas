@@ -1,7 +1,8 @@
-import App from '../App';
 import { render, renderHook, waitFor, screen } from '@testing-library/react';
-import { QUERY_KEYS } from '../constants/queryKeys';
+import { RecoilRoot } from 'recoil';
+
 import { createQueryWrapper } from './mocks/createQueryWrapper';
+import { QUERY_KEYS } from '../constants/queryKeys';
 import CheckBox from '../components/common/CheckBox';
 import Header from '../components/common/Header';
 import Loading from '../components/common/Loading';
@@ -9,7 +10,7 @@ import Option from '../components/common/Option';
 import SelectBox from '../components/common/SelectBox';
 import { usePrefecturesQuery } from '../hooks/usePrefecturesQuery';
 import { usePrefectureDetailQuery } from '../hooks/usePrefectureDetailQuery';
-import { RecoilRoot } from 'recoil';
+import App from '../App';
 
 describe('component rendering test', () => {
   test('CheckBox component test', async () => {
