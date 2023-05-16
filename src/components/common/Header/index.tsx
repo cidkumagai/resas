@@ -1,10 +1,22 @@
+import { FC } from 'react';
+import { Helmet } from 'react-helmet';
+
 import './Header.css';
 
-const Header = () => {
+type Props = {
+  title: string;
+};
+const Header: FC<Props> = ({ title }) => {
   return (
-    <header className='header'>
-      <h1 className='header_title'>都道府県別人口推移</h1>
-    </header>
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{title}</title>
+      </Helmet>
+      <header className="header">
+        <h1 className="header_title">{title}</h1>
+      </header>
+    </>
   );
 };
 

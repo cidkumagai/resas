@@ -7,6 +7,7 @@ import { usePrefecturesQuery } from '../../../hooks/usePrefecturesQuery';
 import './Top.css';
 
 const Top = () => {
+  const headerTitle = '都道府県別人口推移';
   const { data: prefectures, isLoading } = usePrefecturesQuery();
 
   if (isLoading) {
@@ -15,7 +16,7 @@ const Top = () => {
 
   return (
     <>
-      <Header />
+      <Header title={headerTitle} />
       <section>
         <h1 className="prefecture_title">都道府県</h1>
         <ul className="prefecture_list">
