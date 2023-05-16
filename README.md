@@ -6,7 +6,7 @@
 ## 使用技術
 - yarn(1.22.19)
 - React(18.2.0)
-- TypeScript(4.8.3)
+- TypeScript(５.0.4)
 
 ## 使い方
 
