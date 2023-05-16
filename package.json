@@ -50,6 +50,7 @@
     "eslint": "^8.40.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-config-react-app": "^7.0.1",
+    "husky": "^8.0.3",
     "jest": "^29.5.0",
     "prettier": "2.8.8",
     "react-helmet": "^6.1.0",
