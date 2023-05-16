@@ -1,9 +1,14 @@
+import { FC } from 'react';
+
 import './Header.css';
 
-const Header = () => {
+type Props = {
+  title: string;
+};
+const Header:FC<Props> = ({title}) => {
   return (
     <header className='header'>
-      <h1 className='header_title'>都道府県別人口推移</h1>
+      <h1 className='header_title'>{title}</h1>
     </header>
   );
 };
