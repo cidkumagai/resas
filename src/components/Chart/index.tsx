@@ -12,9 +12,9 @@ if (typeof Highcharts === 'object') {
 
 import SelectBox from '../common/SelectBox';
 import Option from '../common/Option';
-import { checkedListSelector } from '../../globalStates/Selectors/checkedListSelector';
-import { selectedTypeSelector } from '../../globalStates/Selectors/selectedTypeSelector';
-import { yearsSelector } from '../../globalStates/Selectors/yearsSelector';
+import { checkedListSelector } from '../../globalStates/selectors/checkedListSelector';
+import { selectedTypeSelector } from '../../globalStates/selectors/selectedTypeSelector';
+import { yearsSelector } from '../../globalStates/selectors/yearsSelector';
 import { usePrefectureDetailQuery } from '../../hooks/usePrefectureDetailQuery';
 import { usePrefecturesQuery } from '../../hooks/usePrefecturesQuery';
 import { ChartOptions } from '../../types/ChartOptions';
